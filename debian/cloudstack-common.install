@@ -15,11 +15,22 @@
 # specific language governing permissions and limitations
 # under the License.
 
+/usr/share/cloudstack-common/lib/cloudstack-core.jar
+/usr/share/cloudstack-common/lib/cloudstack-api.jar
+/usr/share/cloudstack-common/vms/systemvm.iso
+/usr/share/cloudstack-common/scripts/installer/*
+/usr/share/cloudstack-common/scripts/network/*
+/usr/share/cloudstack-common/scripts/storage/*
+/usr/share/cloudstack-common/scripts/util/*
+/usr/share/cloudstack-common/scripts/vm/network/*
+/usr/share/cloudstack-common/scripts/vm/systemvm/*
+/usr/share/cloudstack-common/scripts/vm/pingtest.sh
+/usr/share/cloudstack-common/scripts/vm/hypervisor/kvm/*
+/usr/share/cloudstack-common/scripts/vm/hypervisor/versions.sh
+/usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver/*
+/usr/bin/cloud-setup-management
 /usr/bin/cloud-setup-databases
 /usr/bin/cloud-migrate-databases
 /usr/bin/cloud-set-guest-password
 /usr/bin/cloud-set-guest-sshkey
-/usr/share/cloud/setup/*.sql
-/usr/share/cloud/setup/*.sh
-/usr/share/cloud/setup/server-setup.xml
-/usr/share/cloud/setup/db/*.sql
+/usr/lib/python2.?/*-packages/*
