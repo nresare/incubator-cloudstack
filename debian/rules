@@ -99,11 +99,11 @@ install:
 	cp -r scripts/storage debian/tmp/usr/share/cloudstack-common/scripts
 	cp -r scripts/util debian/tmp/usr/share/cloudstack-common/scripts
 	cp -r scripts/vm debian/tmp/usr/share/cloudstack-common/scripts
-	install -D client/bindir/cloud-setup-management.in debian/tmp/usr/bin/cloud-setup-management
-	install -D setup/bindir/cloud-set-guest-password.in debian/tmp/usr/bin/cloud-set-guest-password
-	install -D setup/bindir/cloud-setup-databases.in debian/tmp/usr/bin/cloud-setup-databases
-	install -D setup/bindir/cloud-migrate-databases.in debian/tmp/usr/bin/cloud-migrate-databases
-	install -D setup/bindir/cloud-set-guest-sshkey.in debian/tmp/usr/bin/cloud-set-guest-sshkey
+	install -D client/target/utilities/bin/cloud-migrate-databases debian/tmp/usr/bin
+	install -D client/target/utilities/bin/cloud-set-guest-password debian/tmp/usr/bin
+	install -D client/target/utilities/bin/cloud-set-guest-sshkey debian/tmp/usr/bin
+	install -D client/target/utilities/bin/cloud-setup-databases debian/tmp/usr/bin
+	install -D client/target/utilities/bin/cloud-setup-management debian/tmp/usr/bin
 	install -D console-proxy/dist/systemvm.iso debian/tmp/usr/share/cloudstack-common/vms/systemvm.iso
 	install -D core/target/cloud-core-4.1.0-SNAPSHOT.jar debian/tmp/usr/share/cloudstack-common/lib/cloudstack-core.jar
 	install -D api/target/cloud-api-4.1.0-SNAPSHOT.jar debian/tmp/usr/share/cloudstack-common/lib/cloudstack-api.jar
