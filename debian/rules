@@ -28,7 +28,7 @@ build: build-indep
 build-indep: build-indep-stamp
 
 build-indep-stamp: configure
-	mvn package -DskipTests -Dsystemvm
+	mvn package -DskipTests -Dsystemvm -Dcs.replace.properties=packaging/debian/replace.properties
 	touch $@
 
 clean: 
