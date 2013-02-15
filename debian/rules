@@ -64,7 +64,7 @@ install:
 	install -D packaging/debian/init/cloud-agent debian/tmp/etc/init.d/
 	install -D agent/bindir/cloud-setup-agent.in debian/tmp/usr/bin/cloud-setup-agent
 	install -D agent/bindir/cloud-ssh.in debian/tmp/usr/bin/cloud-ssh
-	cp conf/target/conf/agent/* debian/tmp/etc/cloud/agent
+	cp agent/target/transformed/* debian/tmp/etc/cloud/agent
 
 	# cloudstack-management
 	mkdir debian/tmp/etc/cloud/server
@@ -81,8 +81,8 @@ install:
 	mkdir debian/tmp/var/lib/cloud/mnt
 	cp -r client/target/utilities/scripts/db/* debian/tmp/usr/share/cloudstack-management/setup/
 	cp -r client/target/cloud-client-ui-4.1.0-SNAPSHOT/* debian/tmp/usr/share/cloudstack-management/webapps/client/
-	cp conf/target/conf/server/* debian/tmp/etc/cloud/server/
-	cp conf/target/conf/client/* debian/tmp/etc/cloud/management/
+	cp server/target/conf/* debian/tmp/etc/cloud/server/
+	cp client/target/conf/* debian/tmp/etc/cloud/management/
 	ln -s tomcat6-nonssl.conf debian/tmp/etc/cloud/management/tomcat6.conf
 	mkdir -p debian/tmp/etc/cloud/management/Catalina/localhost/client
 	install -D packaging/debian/init/cloud-management debian/tmp/etc/init.d/cloud-management
@@ -121,7 +121,7 @@ install:
 	mkdir debian/tmp/etc/cloud/usage
 	mkdir debian/tmp/var/log/cloudstack/usage
 	install -D usage/target/cloud-usage-4.1.0-SNAPSHOT.jar debian/tmp/usr/share/cloudstack-usage/lib/cloudstack-usage.jar
-	cp conf/target/conf/usage/* debian/tmp/etc/cloud/usage/
+	cp usage/target/transformed/* debian/tmp/etc/cloud/usage/
 	ln -s ../management/db.properties debian/tmp/etc/cloud/usage/db.properties
 	install -D packaging/debian/init/cloud-usage debian/tmp/etc/init.d
 
