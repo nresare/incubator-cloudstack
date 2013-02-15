@@ -18,6 +18,4 @@
 /usr/share/cloudstack-usage/lib/cloudstack-usage.jar
 /etc/init.d/cloud-usage
 /var/log/cloudstack/usage
-/etc/cloud/usage/usage-components.xml
-/etc/cloud/usage/log4j-cloud_usage.xml
-/etc/cloud/usage/db.properties
+/etc/cloud/usage/*
