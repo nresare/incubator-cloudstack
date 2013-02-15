@@ -10,6 +10,9 @@
 # Modified to make a template file for a multi-binary package with separated
 # build-arch and build-indep targets  by Bill Allombert 2001
 
+DEBVERS := $(shell dpkg-parsechangelog | sed -n -e 's/^Version: //p')
+VERSION := $(shell echo '$(DEBVERS)' | sed -e 's/^[[:digit:]]*://' -e 's/[~-].*//')
+
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
@@ -19,8 +22,8 @@ export DH_OPTIONS
 configure: configure-stamp
 configure-stamp:
 	dh_testdir
-	cp packaging/debian/replace.properties build/replace.properties
-	echo VERSION=$VERSION >> build/replace.properties
+	cp packaging/debian/replace.properties replace.properties.tmp
+	echo VERSION=${VERSION} >> replace.properties.tmp
 	touch configure-stamp
 
 build: build-indep
@@ -28,13 +31,15 @@ build: build-indep
 build-indep: build-indep-stamp
 
 build-indep-stamp: configure
-	mvn package -DskipTests -Dsystemvm -Dcs.replace.properties=packaging/debian/replace.properties
+	mvn package -DskipTests -Dsystemvm \
+        -Dcs.replace.properties=replace.properties.tmp
 	touch $@
 
 clean: 
 	dh_testdir
 	dh_testroot
 	rm -f build-arch-stamp build-indep-stamp configure-stamp
+	rm -f replace.properties.tmp
 	dh_clean 
 
 install:
