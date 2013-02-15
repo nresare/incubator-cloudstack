@@ -48,5 +48,8 @@
 /var/lib/cloud/mnt
 /var/lib/cloud/management
 /usr/bin/cloud-update-xenserver-licenses
+/usr/bin/cloud-setup-management
+/usr/bin/cloud-setup-databases
+/usr/bin/cloud-migrate-databases
 /etc/cloud/management/commands-ext.properties
 /usr/share/cloudstack-management/*
