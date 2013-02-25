@@ -22,4 +22,5 @@
 for jar in /usr/share/tomcat6/lib/*.jar; do
     CLASSPATH=$jar:$CLASSPATH
 done
+CLASSPATH=${CLASSPATH}/usr/share/cloudstack-management/webapps/client/WEB-INF/lib/mysql-connector-java-5.1.21.jar
 export CLASSPATH
