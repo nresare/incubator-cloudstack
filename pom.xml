@@ -173,6 +173,7 @@
     <module>services</module>
     <module>test</module>
     <module>client</module>
+    <module>runner</module>
   </modules>
 
   <dependencyManagement>
