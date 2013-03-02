@@ -87,7 +87,6 @@ install:
 	mkdir -p debian/tmp/etc/cloud/management/Catalina/localhost/client
 	install -D packaging/debian/init/cloud-management debian/tmp/etc/init.d/cloud-management
 	install -D client/bindir/cloud-update-xenserver-licenses.in debian/tmp/usr/bin/cloud-update-xenserver-licenses
-	install -D server/target/cloud-server-4.1.0-SNAPSHOT.jar debian/tmp/usr/share/cloudstack-management/lib/cloudstack-server.jar
 	ln -s /usr/share/tomcat6/bin debian/tmp/usr/share/cloudstack-management/bin
 	ln -s ../../../etc/cloud/management debian/tmp/usr/share/cloudstack-management/conf
 	ln -s /usr/share/tomcat6/lib debian/tmp/usr/share/cloudstack-management/lib
